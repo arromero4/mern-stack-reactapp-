@@ -15,7 +15,7 @@ export const deleteTaskRequest = async (id) => {
 export const getTaskRequest = async (id) =>
   await axios.get(`https://mern-stack-reactapp.herokuapp.com/tasks/${id}`);
 
-  export const updateTaskRequest = async (id, newFields) =>
+export const updateTaskRequest = async (id, newFields) =>
   await axios.put(`https://mern-stack-reactapp.herokuapp.com/tasks/${id}`, newFields);
 
 export const toggleTaskDoneRequest = async (id, done) =>
