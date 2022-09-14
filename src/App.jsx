@@ -16,9 +16,9 @@ function App() {
       <div className="container mx-auto py-4 px-20">
         <TaskContextProvider>
           <Routes>
-            <Route path="https://mern-stack-reactapp.herokuapp.com/" element={<TaskPage />} />
-            <Route path="https://mern-stack-reactapp.herokuapp.com/new" element={<TaskForm />} />
-            <Route path="https://mern-stack-reactapp.herokuapp.com/edit/:id" element={<TaskForm />} />
+            <Route path="/" element={<TaskPage />} />
+            <Route path="/new" element={<TaskForm />} />
+            <Route path="/edit/:id" element={<TaskForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TaskContextProvider>
