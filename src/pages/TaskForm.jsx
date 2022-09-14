@@ -38,7 +38,7 @@ function TaskForm() {
           } else {
             await createTask(values);
           }
-          navigate("/");
+          navigate("/https://mern-stack-reactapp.herokuapp.com/");
           setTask({
             title: "",
             description: "",
