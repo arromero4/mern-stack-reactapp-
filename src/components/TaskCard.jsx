@@ -11,7 +11,7 @@ function TaskCard({ task }) {
   };
 
   return (
-    <div className="bg-zinc-600 text-white rounded-md p-4">
+    <div className="flex-auto bg-zinc-600 text-white rounded-md p-4 md:flex-col">
       <header className="flex justify-between gap-x-2">
         <h2 className="text-sm font-bold">{task.title}</h2>
         <span>{task.done == 1 ? "️✅️" : "❌"}</span>
@@ -19,21 +19,21 @@ function TaskCard({ task }) {
       <p className="text-xs">{task.description}</p>
 
       <span>{task.createAt}</span>
-      <div className="flex gap-x-2">
+      <div className="flex md:flex-col sm:flex-col gap-x-2">
         <button
-          className="bg-red-500 px-2 py-1 text-black"
+          className="bg-red-500 px-2 py-1 text-black md:flex-col sm:flex-col"
           onClick={() => deleteTask(task.id)}
         >
           Delete
         </button>
         <button
-          className="bg-slate-400 px-2 py-1 text-black"
+          className="bg-slate-400 px-2 py-1 text-black md:flex-col sm:flex-col"
           onClick={() => navigate(`/edit/${task.id}`)}
         >
           Edit
         </button>
         <button
-          className="bg-green-500 px-2 py-1 text-black"
+          className="bg-green-500 px-2 py-1 text-black md:flex-col sm:flex-col"
           onClick={() => handleDone(task.done)}
         >
           Toggle Task
