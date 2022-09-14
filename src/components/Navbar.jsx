@@ -13,7 +13,7 @@ function Navbar() {
           <Link to="/" className="bg-slate-400 px-2 py-2">Home</Link>
         </li>
         <li>
-          <Link to="https://mern-stack-reactapp.herokuapp.com/new" className="bg-slate-400 px-2 py-2">Create Task</Link>
+          <Link to="/new" className="bg-slate-400 px-2 py-2">Create Task</Link>
         </li>
       </ul>
     </div>

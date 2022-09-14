@@ -28,7 +28,7 @@ function TaskCard({ task }) {
         </button>
         <button
           className="bg-slate-400 px-2 py-1 text-black"
-          onClick={() => navigate(`https://mern-stack-reactapp.herokuapp.com/edit/${task.id}`)}
+          onClick={() => navigate(`edit/${task.id}`)}
         >
           Edit
         </button>
