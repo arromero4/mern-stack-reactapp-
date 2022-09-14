@@ -19,21 +19,21 @@ function TaskCard({ task }) {
       <p className="text-xs">{task.description}</p>
 
       <span>{task.createAt}</span>
-      <div className="flex md:flex-col sm:flex-col gap-x-2">
+      <div className="flex sm:flex-col gap-x-2">
         <button
-          className="bg-red-500 px-2 py-1 text-black md:flex-col sm:flex-col"
+          className="bg-red-500 px-2 py-1 text-black sm:flex-col"
           onClick={() => deleteTask(task.id)}
         >
           Delete
         </button>
         <button
-          className="bg-slate-400 px-2 py-1 text-black md:flex-col sm:flex-col"
+          className="bg-slate-400 px-2 py-1 text-black sm:flex-col"
           onClick={() => navigate(`/edit/${task.id}`)}
         >
           Edit
         </button>
         <button
-          className="bg-green-500 px-2 py-1 text-black md:flex-col sm:flex-col"
+          className="bg-green-500 px-2 py-1 text-black sm:flex-col"
           onClick={() => handleDone(task.done)}
         >
           Toggle Task
