@@ -27,7 +27,7 @@ function TaskForm() {
   }, []);
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto  pt-20">
       <Formik
         initialValues={task}
         enableReinitialize={true}

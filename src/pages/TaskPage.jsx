@@ -17,8 +17,8 @@ function TaskPage() {
 
   return (
     <div>
-      <h1 className="text-5xl text-white font-bold text-center">Tasks</h1>
-      <div className="grid grid-cols-3 gap-2">{renderMain()}</div>
+      <h1 className="text-5xl text-white font-bold text-center py-20">Tasks</h1>
+      <div className="grid lg:grid-cols-3 gap-2 sm:grid-cols-1">{renderMain()}</div>
     </div>
   );
 }

@@ -1,79 +1,55 @@
-import React, { useEffect, useRef} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ReactDOM from 'react-dom'
-
-
-
+import Button from "./Button";
 
 function Navbar() {
-  const modalRef = useRef(null)
-  useEffect(() => {
+  const [open, setOpen] = useState(false);
 
-    const Boton = ReactDOM.findDOMNode(modalRef.current).querySelector("#boton");
-    const Menu = ReactDOM.findDOMNode(modalRef.current).querySelector("#menu");
-        function handlerClick() {
-          Menu.classList.toggle("block");
-        }
-        Boton.addEventListener('click', handlerClick)
-        return () => {
-          Menu.classList.toggle("hidden");
-        }
-    
-})
   return (
-
-      <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6"
-      ref={modalRef}>
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-        
-        <Link to="/" className="font-semibold text-xl tracking-tight">
-        <h1 className="font-semibold text-xl tracking-tight">React MySQL</h1>
-      </Link>
-  
-        </div>
-        <div className="block lg:hidden">
-          <button
-            id="boton"
-            className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
-            
-          >
-            <svg
-              className="fill-current h-3 w-3"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
+    <div className="shadow-md w-full fixed top-0 left-0">
+      <div className="md:flex bg-white items-center justify-between py-4 md:px-10 px-7">
+        <div className="font-bold text-2xl cursor-pointer flex item-center text-gray-800">
+          <span className="text-3xl text-indigo-600">
+            <ion-icon name="logo-react"></ion-icon>
+          </span>
+          <Link to="/">
+            <h1>React MySQL</h1>
+          </Link>
         </div>
 
         <div
-          id="menu"
-          className="w-full block flex-grow lg:flex lg:items-center lg:w-auto"
+          onClick={() => setOpen(!open)}
+          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
-          <div className="text-sm lg:flex-grow">
-            <Link
-            to="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-            
-          >
-            Home
-          </Link>
-          <Link
-            to="/new"
-            className="lock mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
-            
-          >
-            Create Task
-          </Link>
+          <ion-icon name={open ? "close" : "menu"}></ion-icon>
+        </div>
+
+        <div
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in 
+          ${
+            open ? "top-30" : "top-[-500px]"
+          } sm:opacity-100 opacity-0`}
+        >
+          <div className="md:my-0 my-7">
+            <Button>
+              <Link to="/">
+                Home
+              </Link>
+            </Button>
+          </div>
+
+          <div className="md:my-0 my-7">
+            <Button>
+              <Link to="/new">
+                Create Task
+              </Link>
+            </Button>
           </div>
         </div>
-      </nav>
 
+      </div>
+    </div>
   );
 }
-
-
 
 export default Navbar;

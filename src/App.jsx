@@ -11,9 +11,9 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="bg-zinc-900 h-screen">
+    <div className="container bg-zinc-900 h-screen w-auto mx-auto ">
       <Navbar />
-      <div className="container mx-auto py-4 px-20">
+      <div className="py-4 px-20 bg-zinc-900">
         <TaskContextProvider>
           <Routes>
             <Route path="/" element={<TaskPage />} />
